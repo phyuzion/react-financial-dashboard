@@ -72,11 +72,11 @@ export const kanbanGrid = [
 ];
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
-    <img
+    {/* <img
       className="rounded-full w-10 h-10"
       src={props.EmployeeImage}
       alt="employee"
-    />
+    /> */}
     <p>{props.Name}</p>
   </div>
 );
@@ -142,11 +142,11 @@ export const EditorData = () => (
 );
 const customerGridImage = (props) => (
   <div className="image flex gap-4">
-    <img
+    {/* <img
       className="rounded-full w-10 h-10"
       src={props.CustomerImage}
       alt="employee"
-    />
+    /> */}
     <div>
       <p>{props.CustomerName}</p>
       <p>{props.CustomerEmail}</p>
@@ -521,50 +521,29 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: 'Dashboard',
+    title: '대시보드',
     links: [
       {
         name: 'ecommerce',
+        title : '현황',
         icon: <FiShoppingBag />,
       },
     ],
   },
 
   {
-    title: 'Pages',
+    title: '유저',
     links: [
-      {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
-      },
+      
       {
         name: 'employees',
+        title: '에이전트',
         icon: <IoMdContacts />,
       },
       {
         name: 'customers',
+        title: '일반',
         icon: <RiContactsLine />,
-      },
-    ],
-  },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
       },
     ],
   },
@@ -671,48 +650,38 @@ export const earningData = [
   {
     icon: <MdOutlineSupervisorAccount />,
     amount: '39,354',
-    percentage: '-4%',
-    title: 'Customers',
+    percentage: '+4%',
+    title: '현재 고객수',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
+    pcColor: 'green-600',
   },
   {
-    icon: <BsBoxSeam />,
-    amount: '4,396',
-    percentage: '+23%',
-    title: 'Products',
-    iconColor: 'rgb(255, 244, 229)',
-    iconBg: 'rgb(254, 201, 15)',
+    icon: <MdOutlineSupervisorAccount />,
+    amount: '5,768',
+    percentage: '+2%',
+    title: '에이전트',
+    iconColor: '#4D377B',
+    iconBg: '#CAACD7',
     pcColor: 'green-600',
   },
   {
     icon: <FiBarChart />,
-    amount: '423,39',
+    amount: '$ 422,339',
     percentage: '+38%',
-    title: 'Sales',
+    title: '수익',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
-
     pcColor: 'green-600',
   },
   {
     icon: <HiOutlineRefresh />,
-    amount: '39,354',
+    amount: '$ 119,354',
     percentage: '-12%',
-    title: 'Refunds',
+    title: '운영 지출',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
-  },
-  {
-    icon: <MdOutlineSupervisorAccount />,
-    amount: '45,768',
-    percentage: '+87%',
-    title: 'Employees',
-    iconColor: '#03C9D7',
-    iconBg: '#E5FAFB',
-    pcColor: 'green-600',
   },
 ];
 
@@ -3239,22 +3208,16 @@ export let semiPieData = [
 
 export const stackedChartData = [
   [
-    { x: 'Jan', y: 111.1 },
-    { x: 'Feb', y: 127.3 },
-    { x: 'Mar', y: 143.4 },
-    { x: 'Apr', y: 159.9 },
-    { x: 'May', y: 159.9 },
-    { x: 'Jun', y: 159.9 },
-    { x: 'July', y: 159.9 },
+    { x: '1주차', y: 111.1 },
+    { x: '2주차', y: 127.3 },
+    { x: '3주차', y: 143.4 },
+    { x: '4주차', y: 159.9 },
   ],
   [
-    { x: 'Jan', y: 111.1 },
-    { x: 'Feb', y: 127.3 },
-    { x: 'Mar', y: 143.4 },
-    { x: 'Apr', y: 159.9 },
-    { x: 'May', y: 159.9 },
-    { x: 'Jun', y: 159.9 },
-    { x: 'July', y: 159.9 },
+    { x: '1주차', y: 111.1 },
+    { x: '2주차', y: 127.3 },
+    { x: '3주차', y: 143.4 },
+    { x: '4주차', y: 159.9 },
   ],
 ];
 
@@ -3264,7 +3227,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Budget',
+    name: '내 수익',
     type: 'StackingColumn',
     background: 'blue',
 
@@ -3274,7 +3237,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'Expense',
+    name: '총 수익',
     type: 'StackingColumn',
     background: 'red',
 

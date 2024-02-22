@@ -58,12 +58,6 @@ const App = () => {
                 <Route path="/employees" exact element={<Employees />} />
                 <Route path="/customers" exact element={<Customers />} />
 
-                {/* Apps */}
-                <Route path="/kanban" exact element={<Kanban />} />
-                <Route path="/editor" exact element={<Editor />} />
-                <Route path="/calendar" exact element={<Calendar />} />
-                <Route path="/color-picker" exact element={<ColorPicker />} />
-
                 {/* Charts */}
                 <Route path="/line" exact element={<Line />} />
                 <Route path="/area" exact element={<Area />} />

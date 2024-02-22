@@ -10,7 +10,7 @@ const Customers = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl shadow-2xl">
-      <Header category="Page" title="Customers" />
+      <Header category="Page" title="일반 유저" />
       <GridComponent
         dataSource={customersData}
         enableHover={true}
