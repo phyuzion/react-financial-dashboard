@@ -89,14 +89,14 @@ const Ecommerce = () => {
                   <span className='text-3xl font-semibold'>$63,448</span>
                   <span className='p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs'>25%</span>
                 </p>
-                <p className='text-gray-500 mt-1'>내 순수익</p>ㄹ
+                <p className='text-gray-500 mt-1'>내 순수익</p>
               </div>
 
               <div className='mt-8'>
                 <p>
                   <span className='text-3xl font-semibold'>$253,792</span>
                 </p>
-                <p className='text-gray-500 mt-1'>총 수익</p>
+                <p className='text-gray-500 mt-1'>서비스 총 수익</p>
               </div>
 
               <div className='mt-5 border-b-2 pb-2'>
@@ -130,82 +130,12 @@ const Ecommerce = () => {
           </div>
         </div>
 
-
-        {/* Recent Transactions */}
-        <div className='flex gap-10 m-4 flex-wrap justify-center'>
-          <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl drop-shadow-2xl'>
-            <div className='flex justify-between items-center gap-2 flex-col'>
-
-              <div className='flex justify-between items-center w-full mb-0 pb-0'>
-                <p className='text-xl font-semibold'>
-                  최근 입출금
-                </p>
-
-                {/* Dropdown */}
-
-                <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-                  <DropDownListComponent
-                    id="time"
-                    fields={{ text: 'Time', value: 'Id' }}
-                    style={{
-                      border: 'none',
-                      color: (currentMode === 'Dark') && 'white'
-                    }}
-                    value="1"
-                    dataSource={dropdownData}
-                    popupHeight="220px"
-                    popupWidth="120px" />
-                </div>
-              </div>
-              <div className='mt-10 w-72 md:w-400'>
-                {recentTransactions.map((item, index) => (
-                  <div key={index} className='flex justify-between items-center mt-2 p-2 rounded-2xl hover:shadow-lg cursor-pointer'>
-                    <div className='flex gap-4'>
-                      <button
-                        type='button'
-                        style={{
-                          color: item.iconColor,
-                          backgroundColor: item.iconBg
-                        }}
-                        className='text-2xl rounded-lg p-4 hover:drop-shadow-xl'
-                      >
-                        {item.icon}
-                      </button>
-                      <div>
-                        <p className='text-md font-semibold'>
-                          {item.title}
-                        </p>
-                        <p className='text-sm text-gray-400'>
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                    <p className={`text-${item.pcColor}`}>
-                      {item.amount}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className='flex justify-between items-center mt-5 border-t-1 border-color w-full'>
-                <div className='mt-3'>
-                  <Button
-                    color="white"
-                    bgColor={currentColor}
-                    text="상세 보기"
-                    borderRadius="10px"
-                    width="28"
-                  />
-                </div>
-                <p className="text-gray-400 text-sm self-center">
-                  10분 내 36회
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+<br/>
+<br/>
+<br/>
+
     </section>
   );
 }

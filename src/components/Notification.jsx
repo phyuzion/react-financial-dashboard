@@ -14,14 +14,14 @@ const Notification = () => {
       <div className='flex justify-between items-center'>
         <div className="flex gap-3">
           <p className='text-lg font-semibold dark:text-gray-200'>
-            Notifications
+            알림
           </p>
           <button
             type='button'
             className='text-white text-xs rounded p-1 px-2'
             style={{ background: currentColor }}
           >
-            5 New
+            신규 5 개
           </button>
         </div>
         <Button
@@ -59,7 +59,7 @@ const Notification = () => {
           <Button
             color='white'
             bgColor={currentColor}
-            text='See all notifications'
+            text='전체 알림 보기'
             borderRadius='10px'
             width='full'
           />

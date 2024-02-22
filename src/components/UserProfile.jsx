@@ -4,7 +4,7 @@ import { MdOutlineCancel } from 'react-icons/md';
 import { Button } from '.';
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
-import avatar from '../data/myProfilePic.jpg';
+import avatar from '../data/myProfilePic.png';
 
 const UserProfile = () => {
   const { currentColor } = useStateContext();
@@ -13,7 +13,7 @@ const UserProfile = () => {
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96 hover:drop-shadow-2xl shadow-2xl">
       <div className='flex justify-between items-center'>
         <p className="text-lg font-semibold dark:text-gray-200">
-          User Profile
+          내 정보
         </p>
         <Button
           icon={<MdOutlineCancel />}
@@ -31,13 +31,13 @@ const UserProfile = () => {
         />
         <div>
           <p className="text-xl font-semibold dark:text-gray-200">
-            Meraj Mazidi
+            호랭이공장
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Administrator
+            슈페리어 에이전트
           </p>
           <p className="text-sm text-gray-500 font-semibold dark:text-gray-400">
-            merajmazidiwork@gmail.com
+            25%
           </p>
         </div>
       </div>
@@ -72,7 +72,7 @@ const UserProfile = () => {
         <Button
           color='white'
           bgColor={currentColor}
-          text='Logout'
+          text='로그아웃'
           borderRadius='10px'
           width='full'
         />

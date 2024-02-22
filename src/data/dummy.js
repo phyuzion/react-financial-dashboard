@@ -1,10 +1,10 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart, FiMail, FiMonitor } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
+import { RiContactsLine, RiHistoryLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
@@ -234,7 +234,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'USA',
+    name: 'Global',
     opacity: '0.8',
     type: 'SplineArea',
     width: '2',
@@ -262,17 +262,17 @@ export const areaCustomSeries = [
 
 export const barChartData = [
   [
-    { x: 'USA', y: 46 },
+    { x: 'Global', y: 46 },
     { x: 'GBR', y: 27 },
     { x: 'CHN', y: 26 },
   ],
   [
-    { x: 'USA', y: 37 },
+    { x: 'Global', y: 37 },
     { x: 'GBR', y: 23 },
     { x: 'CHN', y: 18 },
   ],
   [
-    { x: 'USA', y: 38 },
+    { x: 'Global', y: 38 },
     { x: 'GBR', y: 17 },
     { x: 'CHN', y: 26 },
   ],
@@ -420,20 +420,20 @@ export const LinePrimaryYAxis = {
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
   {
-    headerText: 'Name',
+    headerText: '유저명',
     width: '150',
     template: customerGridImage,
     textAlign: 'Center'
   },
   {
     field: 'ProjectName',
-    headerText: 'Project Name',
+    headerText: '최종 접속 기록',
     width: '150',
     textAlign: 'Center'
   },
   {
     field: 'Status',
-    headerText: 'Status',
+    headerText: '상태',
     width: '130',
     format: 'yMd',
     textAlign: 'Center',
@@ -441,14 +441,14 @@ export const customersGrid = [
   },
   {
     field: 'Weeks',
-    headerText: 'Weeks',
+    headerText: '주수',
     width: '100',
     format: 'C2',
     textAlign: 'Center'
   },
   {
     field: 'Budget',
-    headerText: 'Budget',
+    headerText: '잔고',
     width: '100',
     format: 'yMd',
     textAlign: 'Center'
@@ -456,14 +456,14 @@ export const customersGrid = [
 
   {
     field: 'Location',
-    headerText: 'Location',
+    headerText: '접속지역',
     width: '150',
     textAlign: 'Center'
   },
 
   {
     field: 'CustomerID',
-    headerText: 'Customer ID',
+    headerText: '고유 ID',
     width: '120',
     textAlign: 'Center',
     isPrimaryKey: true,
@@ -473,7 +473,7 @@ export const customersGrid = [
 
 export const employeesGrid = [
   {
-    headerText: 'Employee',
+    headerText: '에이전트명',
     width: '150',
     template: gridEmployeeProfile,
     textAlign: 'Center'
@@ -486,12 +486,12 @@ export const employeesGrid = [
   },
   {
     field: 'Title',
-    headerText: 'Designation',
+    headerText: '에이전트 등급 / %',
     width: '170',
     textAlign: 'Center',
   },
   {
-    headerText: 'Country',
+    headerText: '국가',
     width: '120',
     textAlign: 'Center',
     template: gridEmployeeCountry
@@ -499,7 +499,7 @@ export const employeesGrid = [
 
   {
     field: 'HireDate',
-    headerText: 'Hire Date',
+    headerText: '등록일',
     width: '135',
     format: 'yMd',
     textAlign: 'Center'
@@ -507,14 +507,65 @@ export const employeesGrid = [
 
   {
     field: 'ReportsTo',
-    headerText: 'Reports To',
+    headerText: '관리자',
     width: '120',
     textAlign: 'Center'
   },
   {
     field: 'EmployeeID',
-    headerText: 'Employee ID',
+    headerText: '고유 ID',
     width: '125',
+    textAlign: 'Center'
+  },
+];
+
+
+export const messagesGrid = [
+  {
+    headerText: '유저',
+    width: '150',
+    template: gridEmployeeProfile,
+    textAlign: 'Center'
+  },
+  {
+    field: 'Title',
+    headerText: '내용',
+    width: '550',
+    textAlign: 'Center',
+  },
+
+  {
+    field: 'ReportsTo',
+    headerText: '일시',
+    width: '120',
+    textAlign: 'Center'
+  },
+];
+
+export const calcsGrid = [
+  {
+    field: 'ReportsTo',
+    headerText: '일시',
+    width: '120',
+    format:'yMd',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Title',
+    headerText: '내용',
+    width: '350',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Ammount',
+    headerText: '증감',
+    width: '100',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Budget',
+    headerText: '잔고',
+    width: '100',
     textAlign: 'Center'
   },
 ];
@@ -528,63 +579,42 @@ export const links = [
         title : '현황',
         icon: <FiShoppingBag />,
       },
+      {
+        name: 'messages',
+        title : '메시지',
+        icon: <FiMail />,
+      },
+      {
+        name: 'calcs',
+        title : '정산 내역',
+        icon: <FiMonitor />,
+      },
     ],
   },
 
   {
-    title: '유저',
+    title: '유저/기록 관리',
     links: [
       
       {
         name: 'employees',
-        title: '에이전트',
+        title: '에이전트 관리',
         icon: <IoMdContacts />,
       },
       {
         name: 'customers',
-        title: '일반',
+        title: '일반 유저 관리',
         icon: <RiContactsLine />,
       },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
       {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
+        name: 'ghistory',
+        title: '게임 기록',
+        icon: <RiHistoryLine />,
       },
     ],
   },
+  
+  
 ];
 
 export const cartData = [
@@ -615,32 +645,32 @@ export const chatData = [
   {
     image:
       avatar2,
-    message: 'Roman Joined the Team!',
-    desc: 'Congratulate him',
+    message: 'Roman 에이전트가 추가 됐습니다.',
+    desc: '축하 메시지를 부탁드립니다.',
     time: '9:08 AM',
     dotColor: 'red'
   },
   {
     image:
       avatar3,
-    message: 'New message received',
-    desc: 'Salma sent you new message',
+    message: '신규 메시지가 있습니다.',
+    desc: 'Salma 가 보낸 메시지 입니다.',
     time: '11:56 AM',
     dotColor: 'green'
   },
   {
     image:
       avatar4,
-    message: 'New Payment received',
-    desc: 'Check your earnings',
+    message: '정산이 완료 됐습니다.',
+    desc: '정산 내역 확인 요청 드립니다.',
     time: '4:39 AM',
     dotColor: 'orange'
   },
   {
     image:
       avatar,
-    message: 'Jolly completed tasks',
-    desc: 'Assign her new tasks',
+    message: 'Jolly 검증이 완료 됐습니다.',
+    desc: '신규 에이전트 요청 검증이 완료 됐습니다.',
     time: '1:12 AM',
     dotColor: 'yellow'
   },
@@ -885,22 +915,22 @@ export const themeColors = [
 export const userProfileData = [
   {
     icon: <BsCurrencyDollar />,
-    title: 'My Profile',
-    desc: 'Account Settings',
+    title: '내 계정',
+    desc: '계정 정보 수정',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
   },
   {
     icon: <BsShield />,
-    title: 'My Inbox',
-    desc: 'Messages & Emails',
+    title: '수신함',
+    desc: '공지사항 & 메시지',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
   },
   {
     icon: <FiCreditCard />,
-    title: 'My Tasks',
-    desc: 'To-do and Daily Tasks',
+    title: '요청함',
+    desc: '요청 사항 확인',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
   },
@@ -963,19 +993,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1002,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -983,49 +1013,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1003,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1004,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1005,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1006,
@@ -1033,19 +1063,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1007,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1053,49 +1083,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1008,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1009,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1010,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1011,
@@ -1103,19 +1133,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1012,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1123,49 +1153,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1013,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1014,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1015,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1016,
@@ -1173,19 +1203,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1017,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1193,49 +1223,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1018,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1019,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1020,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1021,
@@ -1243,19 +1273,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1022,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1263,49 +1293,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1023,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1024,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1025,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1026,
@@ -1313,19 +1343,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1027,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1333,49 +1363,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1028,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1029,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1030,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1031,
@@ -1383,19 +1413,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1032,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1403,49 +1433,49 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1033,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1034,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1035,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1036,
@@ -1453,19 +1483,19 @@ export const customersData = [
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
       avatar2,
-    ProjectName: 'Hosting Press HTML',
+    ProjectName: 'Live Casino',
     Status: 'Active',
     StatusBg: '#8BE78B',
     Weeks: '40',
     Budget: '$2.4k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1037,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
+    ProjectName: 'TexasHoldem',
     Status: 'Active',
     CustomerImage:
       avatar3,
@@ -1473,129 +1503,1705 @@ export const customersData = [
     StatusBg: '#8BE78B',
     Weeks: '11',
     Budget: '$3.9k',
-    Location: 'India',
+    Location: 'Korea',
   },
   {
     CustomerID: 1038,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
+    ProjectName: 'Pachinko',
     Status: 'Pending',
     CustomerImage:
       avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1039,
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
+    ProjectName: 'Sudda',
     Status: 'Completed',
     CustomerImage:
       avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
   {
     CustomerID: 1040,
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
+    ProjectName: 'Slot',
     Status: 'Cancel',
     CustomerImage:
       avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
-    Location: 'USA',
+    Location: 'Global',
   },
 
 ];
 
+
+export const calcsData = [
+  {
+    ReportsTo: '2024/02/01',
+    Title: '인출 완료',
+    Ammount: '-$100,000',
+    Budget: '$262,500',
+  },
+  {
+    ReportsTo: '2024/02/01',
+    Title: '인출 요청',
+    Ammount: '$100,000',
+    Budget: '$362,500',
+  },
+  {
+    ReportsTo: '2024/02/01',
+    Title: '정산 완료',
+    Ammount: '+$150,000',
+    Budget: '$362,500',
+  },
+  
+  {
+    ReportsTo: '2024/02/01',
+    Title: '정산 요청',
+    Ammount: '$150,000',
+    Budget: '$212,500',
+  },
+  {
+    ReportsTo: '2024/01/01',
+    Title: '정산 완료',
+    Ammount: '+$112,500',
+    Budget: '$212,500',
+  },
+  {
+    ReportsTo: '2024/01/01',
+    Title: '정산 요청',
+    Ammount: '$112,500',
+    Budget: '$100,500',
+  },
+  
+  
+];
+
+
+export const gHistoryGrid = [
+  {
+    headerText: '유저',
+    width: '150',
+    template: gridEmployeeProfile,
+    textAlign: 'Center'
+  },
+  {
+    field: 'Title',
+    headerText: '게임',
+    width: '170',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Ammount',
+    headerText: '증감',
+    width: '120',
+    textAlign: 'Center',
+  },
+
+  {
+    field: 'Date',
+    headerText: '일시',
+    width: '135',
+    format: 'yMd',
+    textAlign: 'Center'
+  },
+
+  {
+    field: 'ResultID',
+    headerText: '결과 ID',
+    width: '125',
+    textAlign: 'Center'
+  },
+];
+
+
+
+
+export const gHistoryData = [
+  {
+    ResultID: 12123,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '+$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 24125,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '+$12',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 39283,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$100',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 43753,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$30',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 56566,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$40',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 48235,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '+$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 51065,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$40',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 18754,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$100',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 22367,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$45',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 33274,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '+$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 46785,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '+$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 54293,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '+$100',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 42368,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$25',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 53474,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '+$30',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 14582,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$50',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 25403,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '+$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 34378,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 46324,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '$-$40',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 50975,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '+$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 42848,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 50088,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 17766,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 25566,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '+$15',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 37764,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 5,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 4,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 5,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 1,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 3,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 5,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 4,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 5,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 1,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 3,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 5,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 4,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 5,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 1,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 3,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 5,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 4,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 5,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 1,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 3,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 5,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 4,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 5,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 1,
+    Name: 'Nancy Davolio',
+    Title: 'Live Casino',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    ResultID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    ResultID: 3,
+    Name: 'Iulia Albu',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    ResultID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    ResultID: 5,
+    Name: 'Omar Darobe',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 4,
+    Name: 'Penjani Inyene',
+    Title: 'Slot',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    ResultID: 5,
+    Name: 'Miron Vitold',
+    Title: 'MiniGame',
+    Date: '2024/02/23',
+    Ammount: '-$10',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+];
+
+export const messagesData = [
+
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 1,
+    Name: 'Nancy Davolio',
+    Title: '에이전트 충전 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 2,
+    Name: 'Nasimiyu Danai',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 3,
+    Name: 'Iulia Albu',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Siegbert Gottfried',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Omar Darobe',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 4,
+    Name: 'Penjani Inyene',
+    Title: '에이전트 등록 요청 드립니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 5,
+    Name: 'Miron Vitold',
+    Title: '충전이 완료 됐습니다.',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '2024/02/23',
+    EmployeeImage:
+      avatar2,
+  },
+]
+
 export const employeesData = [
   {
-    EmployeeID: 1,
+    EmployeeID: 12123,
     Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Title: 'A / 35%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
-    EmployeeID: 2,
+    EmployeeID: 24125,
     Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
-    EmployeeID: 3,
+    EmployeeID: 39283,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 43753,
+    Name: 'Siegbert Gottfried',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 56566,
+    Name: 'Omar Darobe',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 48235,
+    Name: 'Penjani Inyene',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 51065,
+    Name: 'Miron Vitold',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 18754,
+    Name: 'Nancy Davolio',
+    Title: 'A / 35%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 22367,
+    Name: 'Nasimiyu Danai',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 33274,
+    Name: 'Iulia Albu',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 46785,
+    Name: 'Siegbert Gottfried',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 54293,
+    Name: 'Omar Darobe',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 42368,
+    Name: 'Penjani Inyene',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 53474,
+    Name: 'Miron Vitold',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 14582,
+    Name: 'Nancy Davolio',
+    Title: 'A / 35%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 25403,
+    Name: 'Nasimiyu Danai',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 34378,
+    Name: 'Iulia Albu',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar4,
+  },
+  {
+    EmployeeID: 46324,
+    Name: 'Siegbert Gottfried',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 50975,
+    Name: 'Omar Darobe',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 42848,
+    Name: 'Penjani Inyene',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar,
+  },
+  {
+    EmployeeID: 50088,
+    Name: 'Miron Vitold',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+  },
+  {
+    EmployeeID: 17766,
+    Name: 'Nancy Davolio',
+    Title: 'A / 35%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar2,
+
+  },
+  {
+    EmployeeID: 25566,
+    Name: 'Nasimiyu Danai',
+    Title: 'B / 25%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
+    EmployeeImage:
+      avatar3,
+  },
+  {
+    EmployeeID: 37764,
+    Name: 'Iulia Albu',
+    Title: 'C / 15%',
+    HireDate: '01/02/2022',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
     Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
     Name: 'Miron Vitold',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
     Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Title: 'A / 35%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
 
@@ -1603,140 +3209,70 @@ export const employeesData = [
   {
     EmployeeID: 2,
     Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
     Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
     Name: 'Miron Vitold',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
     Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Title: 'A / 35%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
 
@@ -1744,70 +3280,70 @@ export const employeesData = [
   {
     EmployeeID: 2,
     Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
     Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
     Name: 'Miron Vitold',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
     Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Title: 'A / 35%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
 
@@ -1815,70 +3351,70 @@ export const employeesData = [
   {
     EmployeeID: 2,
     Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
     Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
     Name: 'Miron Vitold',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
     Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Title: 'A / 35%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
 
@@ -1886,70 +3422,70 @@ export const employeesData = [
   {
     EmployeeID: 2,
     Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
     Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
     Name: 'Miron Vitold',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
     Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Title: 'A / 35%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
 
@@ -1957,202 +3493,60 @@ export const employeesData = [
   {
     EmployeeID: 2,
     Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
     Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Title: 'B / 25%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
     Name: 'Miron Vitold',
-    Title: 'HR',
+    Title: 'C / 15%',
     HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2022',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Global',
+    ReportsTo: '호랭이공장',
     EmployeeImage:
       avatar2,
   },
@@ -2165,7 +3559,7 @@ export const ordersData = [
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2220,7 +3614,7 @@ export const ordersData = [
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2231,7 +3625,7 @@ export const ordersData = [
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2242,7 +3636,7 @@ export const ordersData = [
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2253,7 +3647,7 @@ export const ordersData = [
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2264,7 +3658,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2275,7 +3669,7 @@ export const ordersData = [
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2297,7 +3691,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2309,7 +3703,7 @@ export const ordersData = [
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2364,7 +3758,7 @@ export const ordersData = [
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2375,7 +3769,7 @@ export const ordersData = [
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2386,7 +3780,7 @@ export const ordersData = [
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2397,7 +3791,7 @@ export const ordersData = [
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2408,7 +3802,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2419,7 +3813,7 @@ export const ordersData = [
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2441,7 +3835,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2453,7 +3847,7 @@ export const ordersData = [
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2508,7 +3902,7 @@ export const ordersData = [
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2519,7 +3913,7 @@ export const ordersData = [
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2530,7 +3924,7 @@ export const ordersData = [
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2541,7 +3935,7 @@ export const ordersData = [
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2552,7 +3946,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2563,7 +3957,7 @@ export const ordersData = [
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2585,7 +3979,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2597,7 +3991,7 @@ export const ordersData = [
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2652,7 +4046,7 @@ export const ordersData = [
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2663,7 +4057,7 @@ export const ordersData = [
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2674,7 +4068,7 @@ export const ordersData = [
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2685,7 +4079,7 @@ export const ordersData = [
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2696,7 +4090,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2707,7 +4101,7 @@ export const ordersData = [
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2729,7 +4123,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2741,7 +4135,7 @@ export const ordersData = [
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2796,7 +4190,7 @@ export const ordersData = [
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2807,7 +4201,7 @@ export const ordersData = [
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2818,7 +4212,7 @@ export const ordersData = [
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
@@ -2829,7 +4223,7 @@ export const ordersData = [
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
@@ -2840,7 +4234,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -2851,7 +4245,7 @@ export const ordersData = [
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
@@ -2873,7 +4267,7 @@ export const ordersData = [
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
-    Location: 'USA',
+    Location: 'Global',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
@@ -3162,7 +4556,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
-    name: 'India',
+    name: 'Korea',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line'
@@ -3199,7 +4593,7 @@ export const ecomPieChartData = [
 export let semiPieData = [
   { x: 'Product1', y: 53, text: 'USA: 14%' },
   { x: 'Product2', y: 56, text: 'China: 15%' },
-  { x: 'Product4', y: 61, text: 'India: 16%' },
+  { x: 'Product4', y: 61, text: 'Korea: 16%' },
   { x: 'Product5', y: 13, text: 'Japan: 3%' },
   { x: 'Product6', y: 79, text: 'Germany: 21%' },
   { x: 'Product7', y: 68, text: 'UK: 19%' },
