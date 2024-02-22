@@ -2,7 +2,7 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Meraj-Mazidi.github.io/react-financial-dashboard",
+  "homepage": "https://phyuzion.github.io/react-financial-dashboard",
   "dependencies": {
     "@syncfusion/ej2": "^19.4.48",
     "@syncfusion/ej2-react-calendars": "^19.4.48",

@@ -689,8 +689,8 @@ export const recentTransactions = [
   {
     icon: <BsCurrencyDollar />,
     amount: '+$350',
-    title: 'Paypal Transfer',
-    desc: 'Money Added',
+    title: '전자 결제',
+    desc: '페이팔, 스트라이프',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'green-600',
@@ -698,8 +698,8 @@ export const recentTransactions = [
   {
     icon: <BsShield />,
     amount: '-$560',
-    desc: 'Bill Payment',
-    title: 'Wallet',
+    desc: '유저 USDT 입/출금',
+    title: 'USDT',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
@@ -707,8 +707,8 @@ export const recentTransactions = [
   {
     icon: <FiCreditCard />,
     amount: '+$350',
-    title: 'Credit Card',
-    desc: 'Money reversed',
+    title: '전자 결제',
+    desc: '결제 입금',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
 
@@ -717,8 +717,8 @@ export const recentTransactions = [
   {
     icon: <TiTick />,
     amount: '+$350',
-    title: 'Bank Transfer',
-    desc: 'Money Added',
+    title: '에이전트 포인트',
+    desc: '에이전트 포인트 변환',
 
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
@@ -728,8 +728,8 @@ export const recentTransactions = [
     icon: <BsCurrencyDollar />,
     amount: '-$50',
     percentage: '+38%',
-    title: 'Refund',
-    desc: 'Payment Sent',
+    title: '환불',
+    desc: '유저/에이전트 환불',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
@@ -3109,14 +3109,14 @@ export const lineChartData = [
 export const dropdownData = [
   {
     Id: '1',
-    Time: 'March 2022',
+    Time: '30분간',
   },
   {
     Id: '2',
-    Time: 'April 2022',
+    Time: '1시간간',
   }, {
     Id: '3',
-    Time: 'May 2022',
+    Time: '오늘',
   },
 ];
 export const SparklineAreaData = [

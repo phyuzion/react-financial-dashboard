@@ -58,15 +58,10 @@ const Navbar = () => {
 
       {/* Right side buttons */}
       <div className='flex'>
-        <NavButton
-          title="Cart"
-          customFunc={() => handleClick('cart')}
-          color={currentColor}
-          icon={<FiShoppingCart />}
-        />
+        
 
         <NavButton
-          title="Chat"
+          title="채팅"
           dotColor="#03C9D7"
           customFunc={() => handleClick('chat')}
           color={currentColor}
@@ -74,7 +69,7 @@ const Navbar = () => {
         />
 
         <NavButton
-          title="Notifications"
+          title="알림"
           dotColor="#03C9D7"
           customFunc={() => handleClick('notification')}
           color={currentColor}
@@ -82,7 +77,7 @@ const Navbar = () => {
         />
 
         <TooltipComponent
-          content="Profile"
+          content="내계정"
           position='BottomCenter'
         >
           <div
@@ -90,8 +85,8 @@ const Navbar = () => {
           >
             <img src={myProfilePic} alt="ProfilePic" className="rounded-full w-8 h-8" />
             <p>
-              <span className='text-gray-400 text-14'>Hi, </span> {' '}
-              <span className='text-gray-400 font-bold ml-1 text-14'>Meraj</span>
+              <span className='text-gray-400 text-14'>안녕하세요, </span> {' '}
+              <span className='text-gray-400 font-bold ml-1 text-14'>호랭이공장 님</span>
             </p>
             <MdKeyboardArrowDown className='text-gray-400 text-14' />
           </div>

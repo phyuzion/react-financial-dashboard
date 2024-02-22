@@ -130,33 +130,6 @@ const Ecommerce = () => {
           </div>
         </div>
 
-        {/* Pie charts */}
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-2 pt-5 pb-0 m-3 flex justify-center items-center gap-10 flex-col w-full drop-shadow-2xl">
-
-          <div className='self-center mb-0 pb-0'>
-            <p className="text-4xl font-semibold text-center">$435,246</p>
-            <p className="text-gray-400 text-xl text-center">Yearly sales</p>
-          </div>
-
-          <div className='flex items-center flex-wrap justify-center'>
-            {/* Yearly Salary */}
-            <div>
-
-              <div className="w-40">
-                <Pie
-                  id="pie-chart"
-                  data={ecomPieChartData}
-                  legendVisiblity={false}
-                  height="160px" />
-              </div>
-            </div>
-
-            {/* Semi Pie */}
-            <div className='w-fit'>
-              <SemiPieChart />
-            </div>
-          </div>
-        </div>
 
         {/* Recent Transactions */}
         <div className='flex gap-10 m-4 flex-wrap justify-center'>
@@ -165,7 +138,7 @@ const Ecommerce = () => {
 
               <div className='flex justify-between items-center w-full mb-0 pb-0'>
                 <p className='text-xl font-semibold'>
-                  Recent Transactions
+                  최근 입출금
                 </p>
 
                 {/* Dropdown */}
@@ -219,51 +192,19 @@ const Ecommerce = () => {
                   <Button
                     color="white"
                     bgColor={currentColor}
-                    text="Add"
+                    text="상세 보기"
                     borderRadius="10px"
                     width="28"
                   />
                 </div>
                 <p className="text-gray-400 text-sm self-center">
-                  36 Recent Transactions
+                  10분 내 36회
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Line chart */}
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760'>
-
-          <div className='flex justify-between items-center w-full mb-5 pb-0'>
-            <p className='text-xl font-semibold'>
-              Sales Overview
-            </p>
-
-            {/* Dropdown */}
-
-            <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-              <DropDownListComponent
-                id="time2"
-                fields={{ text: 'Time', value: 'Id' }}
-                style={{
-                  border: 'none',
-                  color: (currentMode === 'Dark') && 'white'
-                }}
-                value="1"
-                dataSource={dropdownData}
-                popupHeight="220px"
-                popupWidth="120px" />
-            </div>
-          </div>
-
-          <div className='md:w-full overflow-auto'>
-            <LineChart />
-          </div>
-
-        </div>
-
-        <Footer />
       </div>
     </section>
   );

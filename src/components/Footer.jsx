@@ -3,9 +3,9 @@ import React from 'react';
 const Footer = () => (
   <div className="mt-24">
     <p className="dark:text-gray-200 text-gray-700 text-center m-20 font-bold">
-      © 2022 All rights reserved by Meraj Mazidi! ;) 
+      BLACKBOX 
       <br />
-      This project was created using React & Tailwind CSS.
+      Superior Agent의 관리 페이지 입니다.
     </p>
   </div>
 );
